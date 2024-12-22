@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booleans</title>
+</head>
+
+<body>
+  <script>
+    console.log(3 < 5);
+    console.log(typeof false);
+    console.log(5 == '5.00');
+    //use triple equals for type save (preffered)
+    console.log(5 === '5.00');
+    
+    if(false){
+      console.log('hello');
+    } else {
+      console.log('else');
+    }
+    
+    console.log(true && true);
+    console.log(true || false);
+    console.log(!true);
+    
+    /*
+    Falsy values list:
+    false
+    0
+    ''
+    NaN
+    undefined
+    null
+    Any values not on this list is truthy
+    */
+    
+    if(0) console.log('truthy');
+    else console.log('falsy');
+    
+    const cartQuantity = 5;
+    
+    if(cartQuantity) console.log('truthy');
+    else console.log('falsy');
+  
+    console.log(!0);
+    console.log('text' / 5);
+    let variable;
+    console.log(variable);
+    
+    //ternary operator
+    const result = true ? 'truthy' : 'falsy';
+    console.log(result);
+    
+    //&& operator. if left side falsy, it doesn't check right side
+    const message = 5 && 'hello';
+    console.log(message);
+    //|| operator. if left side falsy, it will check right side. it likes default value
+    const currency = undefined || 'USD';
+    console.log(currency);
+  </script>
+</body>
+
+</html>

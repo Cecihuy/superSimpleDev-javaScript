@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOM Projects</title>
+  <style>
+    body{
+      font-family: Arial;
+    }
+    .subscribe-btn{
+      border: none;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+    .is-subscribe{
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+    .cost-input{
+      font-size = 50px;
+      padding: 10px;
+    }
+    .calculate-btn{
+      background-color: green;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button class="js-subscribe-btn subscribe-btn" onclick="
+    subscribe();
+  ">Subscribe</button>
+  <p>Amazon shipping calculator</p>
+  <p>Orders under $40 = +$10 shipping</p>
+  <p>Orders above $40 = free shipping</p>
+  <input  class="js-cost-input cost-input" 
+          placeholder="cost of order"
+          onkeydown="handleCostKeyDown(event);">
+  <button class="calculate-btn" onclick="
+    calculateTotal();
+  ">Calculate</button>
+  <p class="js-total-cost"></p>
+  <script>
+    function handleCostKeyDown(event){
+      console.log(event.key);
+      if (event.key === 'Enter') calculateTotal();
+    }
+    function calculateTotal(){
+      const inputElement = document.querySelector('.js-cost-input');
+      let cost = Number(inputElement.value);
+      if(cost < 40) cost = cost + 10;
+      document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+    }
+    function subscribe(){
+      const btnSubs = document.querySelector('.js-subscribe-btn');
+      if (btnSubs.innerHTML === 'Subscribe'){
+        btnSubs.innerHTML = 'Subscribed';
+        btnSubs.classList.add('is-subscribe');
+      }
+      else{
+        btnSubs.innerHTML = 'Subscribe';
+        btnSubs.classList.remove('is-subscribe');
+      }
+    };
+  </script>
+</body>
+
+</html>

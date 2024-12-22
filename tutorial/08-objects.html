@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Objects</title>
+</head>
+
+<body>
+  <script>
+    const product ={
+      name: 'socks',
+      price: 1090
+    };
+    console.log(typeof product);
+    console.log(product.price);
+    
+    product.name = 'cotton sock';
+    console.log(product);
+    
+    product.newProperty = true;
+    console.log(product);
+    
+    delete product.newProperty;
+    console.log(product);
+    
+    const product2 = {
+      name: 'shirt',
+      'delivery-time': '1 day',
+      rating : {
+        stars: 4.5,
+        count: 87
+      },
+      fun: function function1(){
+        console.log('function inside object');
+      }
+    };
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['delivery-time']);
+    console.log(product2.rating.count);
+    product2.fun();
+    
+    console.log(typeof console);
+    console.log(typeof Math);
+    console.log(typeof console.log);
+    console.log(typeof Math.random);
+    //convert object to string format
+    console.log(JSON.stringify(product2));
+    
+    const jsonString = JSON.stringify(product2);
+    //convert string format to object
+    console.log(JSON.parse(jsonString));
+    
+    //auto boxing.'hello' convert automaticaly into object.
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+    
+    //obj1 is only refference, not a value. even we can change value with const keyword
+    const obj1 = {
+      message: 'hello'
+    };
+    const obj2 = obj1;
+    obj1.message = 'good job';
+    console.log(obj1);
+    console.log(obj2);
+    
+    //we cannot compare object directly
+    const obj3 = {
+      message: 'good job'
+    };
+    console.log(obj3 === obj1);
+    console.log(obj2 === obj1);
+    
+    //another way to create variable
+    const obj4 = {
+      message: 'good job',
+      price: 799
+    };
+    const {message, price} = obj4;
+    console.log(message);
+    console.log(price);
+    
+    const obj5 = {
+      //message: message,
+      message,
+      /*
+      method: function func(){
+        console.log('method');
+      }
+      */
+      method(){
+        console.log('method');
+      }
+    };
+    console.log(obj5);
+    obj5.method();
+  </script>
+</body>
+
+</html>
