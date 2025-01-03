@@ -750,3 +750,23 @@ export const products = [
     return new Clothing(productDetail);
   return new Product(productDetail);
 });
+/*
+//more detail about this keyword
+//inside a method, "this" points to the outer object
+const obj3 = {
+  method(){
+    console.log(this);
+  }
+};
+//inside a function, this = undefined but...
+function logThis(){
+  console.log(this);
+};
+//...but we can change it
+logThis.call('hello');
+//arrow functions do not change the value of "this"
+console.log(this);
+[1,2,3].forEach(()=>{
+  console.log(this);
+});
+*/
